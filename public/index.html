@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzzShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="nav-brand">Buzz Share</a>
+            <a href="qr.html" class="scanqr">Scan QR</a>
+        </div>
+        <div class="main">
+            <div class="part-1">
+                <h1>Share files P2P from anywhere &#x1F680;</h1>
+                <p><b>Buzz Share</b> uses superfast server to share files anywhere across the world, even in space</p>
+                <div class="form">
+                    <input type="text" id="code" placeholder="Enter code">
+                    <button id="code-btn">Go</button>
+                </div>
+                <p style="display: none;" id="helptext">Share your code to the receiver.</p>
+            </div>
+            <div class="part-2">
+                <button class="file-drop" id="file-drop" style="background-color: rgb(255, 255, 188);">
+                    <form enctype="multipart/form-data">
+                    <input id='fileid' type='file' hidden/>
+                    </form>
+                    <span class="plus">&#43;</span>
+                    Drop your file here
+                </button>
+                <div class="file-drop qrcode" id="qrcode" style="background: url('https://www.qrcode-monkey.com/img/default-preview-qr.svg'); background-size: cover; display: none;"></div>
+                <div id="fileshare">
+                    <h1 id="processnode">0%</h1>
+                    <svg id="checkmark" class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="code.js" type="text/javascript"></script>
+</body>
+</html>

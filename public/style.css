@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.navbar {
+    padding: 10px 18px;
+    background-color: #ffd900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scanqr {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.scanqr:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.nav-brand {
+    font-size: 30px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main {
+    padding: 80px 48px;
+    display: flex;
+}
+
+.main h1 {
+    font-size: 48px;
+}
+
+.main p {
+    font-size: 25px;
+    margin: 30px 0px;
+}
+
+.main .part-1 {
+    max-width: 50%;
+}
+
+.part-2 {
+    width: 50%;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.part-2 .file-drop {
+    width: 250px;
+    height: 250px;
+    border: 5px dotted #ffd900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.part-2 .file-drop .plus {
+    padding: 10px 25px;
+    color: #ffd900;
+    border-radius: 100px;
+    font-size: 60px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+}
+
+.form input {
+    color: #000;
+    border: 2px solid #ffd900;
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    color: #000;
+    background-color: #ffd900;
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff1a5;
+}
+
+.screen .form {
+    margin-top: 50px;
+    padding: 48px;
+}
+
+.screen .form #join-id{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ffd900;
+    max-width: fit-content;
+    border-radius: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+#fileshare {
+    width: 250px;
+    height: 250px;
+    border: 5px dotted #ffd900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #fff5bb;
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .main {
+        flex-direction: column;
+        padding: 80px 20px;
+    }
+    .main .part-1 {
+        max-width: 100%;
+    }
+    input {
+        max-width: 250px;
+    }
+    .part-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 30px 0px;
+    }
+}
+
+#checkmark {
+    display: none;
+}
+.checkmark__circle{stroke-dasharray: 166; stroke-dashoffset: 166;stroke-width: 2;stroke-miterlimit: 10;stroke: #7ac142;fill: none;animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards}.checkmark{width: 56px;height: 56px;border-radius: 50%;display: block;stroke-width: 2;stroke: #fff;stroke-miterlimit: 10;margin: 10% auto;box-shadow: inset 0px 0px 0px #7ac142;animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both}.checkmark__check{transform-origin: 50% 50%;stroke-dasharray: 48;stroke-dashoffset: 48;animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards}@keyframes stroke{100%{stroke-dashoffset: 0}}@keyframes scale{0%, 100%{transform: none}50%{transform: scale3d(1.1, 1.1, 1)}}@keyframes fill{100%{box-shadow: inset 0px 0px 0px 30px #7ac142}}
