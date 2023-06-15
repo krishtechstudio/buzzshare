@@ -23,6 +23,7 @@ const qrcode = document.getElementById('qrcode');
 const fileshare = document.getElementById('fileshare');
 const processnode = document.getElementById('processnode');
 const checkmark = document.getElementById('checkmark');
+const downloaded = document.getElementById('downloaded');
 
 if(localStorage.getItem("code") || localStorage.getItem("code") !== ""){
     codeinput.value = localStorage.getItem('code')
@@ -95,8 +96,10 @@ socket.on("init", function(uid) {
         fileBuffer = fileBuffer.slice(metadata.buffer_size, fileBuffer.length);
         fileshare.style.display = "flex"
         processnode.innerText = Math.trunc((metadata.total_buffer_size - fileBuffer.length) / metadata.total_buffer_size * 100) + "%";
+        downloaded.innerText = ((metadata.total_buffer_size - fileBuffer.length) / 1024 / 1024).toFixed(2)  + " MB / " + (metadata.total_buffer_size / 1024 / 1024).toFixed(2) + " MB";
         if(processnode.innerText == "100%"){
             processnode.style.display = "none";
+            downloaded.style.display = "none";
             checkmark.style.display = "block"
         }
         if(chunk.length != 0) {
@@ -126,6 +129,8 @@ socket.on("fs-meta" , function(metadata) {
         fileshare.style.display = "flex"
         console.log(Math.trunc((files.transmitted / files.metadata.total_buffer_size) * 100))
         processnode.innerText = Math.trunc((files.transmitted / files.metadata.total_buffer_size) * 100) + "%";
+        downloaded.innerText = (files.transmitted / 1024 / 1024).toFixed(2)  + " MB / " + (metadata.total_buffer_size / 1024 / 1024).toFixed(2) + " MB";
+        downloaded.style.display = "none"
         if(files.transmitted == files.metadata.total_buffer_size){
             processnode.style.display = "none";
             checkmark.style.display = "block"
