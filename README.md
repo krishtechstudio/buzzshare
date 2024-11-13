@@ -12,3 +12,8 @@ BuzzShare is a web-based peer-to-peer (P2P) file-sharing application that enable
 - Socket.io: WebSocket communication between client and server.
 - FileReader API: For reading and processing file data on the client-side.
 - QR Code Generation: For generating sharable QR codes.
+## How to run ?
+- Install nodejs
+- install packages `npm i`
+- run code `node server.js`
+- open `localhost`
