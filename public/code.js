@@ -134,7 +134,6 @@ socket.on("fs-meta" , function(metadata) {
         if(files.transmitted == files.metadata.total_buffer_size){
             processnode.style.display = "none";
             checkmark.style.display = "block"
-            // download(new Blob(files.buffer), files.metadata.filename);
             console.log(files)
             createAndDownloadBlobFile(files.buffer, files.metadata.fileName)
             files = {};
@@ -150,11 +149,9 @@ function createAndDownloadBlobFile(body, filename) {
     const blob = new Blob(body);
     const fileName = `${filename}`;
     if (navigator.msSaveBlob) {
-      // IE 10+
       navigator.msSaveBlob(blob, fileName);
     } else {
       const link = document.createElement('a');
-      // Browsers that support HTML5 download attribute
       if (link.download !== undefined) {
         const url = URL.createObjectURL(blob);
         link.setAttribute('href', url);

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "",
+  "author": "ktshacx",
   "license": "ISC",
   "dependencies": {
     "@socket.io/cluster-adapter": "^0.2.2",
