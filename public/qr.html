@@ -13,18 +13,14 @@
 </head>
 <body>
     <div id="reader" width="600px"></div>
-    <!-- <script src="code.js" type="text/javascript"></script> -->
     <script>
         function onScanSuccess(decodedText, decodedResult) {
-  // handle the scanned code as you like, for example:
   localStorage.setItem('code', decodedText)
   window.location.href = "./index.html"
   console.log(`Code matched = ${decodedText}`, decodedResult);
 }
 
 function onScanFailure(error) {
-  // handle scan failure, usually better to ignore and keep scanning.
-  // for example:
   console.warn(`Code scan error = ${error}`);
 }
 
